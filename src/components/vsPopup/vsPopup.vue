@@ -136,7 +136,12 @@ export default {
     },
     insertBody(){
       let elx = this.$refs.con
-      document.body.insertBefore(elx, document.body.firstChild)
+      let popups = document.querySelectorAll('div.con-vs-popup');
+      let child = document.firstChild;
+      if (popups.length > 0) {
+        child = popups[popups.length - 1].nextSibling
+      }
+      document.body.insertBefore(elx, child)
     },
   }
 }
