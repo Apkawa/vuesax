@@ -137,7 +137,7 @@ export default {
     insertBody(){
       let elx = this.$refs.con
       let popups = document.querySelectorAll('div.con-vs-popup');
-      let child = document.firstChild;
+      let child = document.body.firstChild;
       if (popups.length > 0) {
         child = popups[popups.length - 1].nextSibling
       }
