@@ -119,6 +119,9 @@ export default {
   mounted(){
     this.insertBody()
   },
+  destroyed() {
+    this.$el.remove()
+  },
   methods:{
     giveColor(color){
       return _color.rColor(color)
@@ -128,7 +131,7 @@ export default {
         if(event.target.className.indexOf('vs-popup--background')!=-1){
           this.$emit('update:active',false)
           this.$emit('close', false)
-        } else if(event.srcElement == this.$refs.btnclose.$el){
+        } else if(this.$refs && event.srcElement == this.$refs.btnclose.$el){
           this.$emit('update:active',false)
           this.$emit('close', false)
         }
