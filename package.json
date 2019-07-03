@@ -1,6 +1,6 @@
 {
   "name": "vuesax",
-  "version": "3.8.17",
+  "version": "3.8.18",
   "description": "Framework Components for Vue js",
   "license": "MIT",
   "author": "ldrovira <luisdanielrovira8@gmail.com>",
@@ -45,6 +45,7 @@
     "new:component": "sh scripts/newComponent.sh"
   },
   "dependencies": {
+    "babel-eslint": "^10.0.2",
     "vue": "^2.5.17"
   },
   "devDependencies": {
