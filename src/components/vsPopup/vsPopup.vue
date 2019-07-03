@@ -93,6 +93,10 @@ export default {
       default:'close',
       type:String
     },
+    closeOnClickOfBackground:{
+      default:false,
+      type:Boolean
+    },
   },
   computed:{
     styleHeader(){
@@ -129,9 +133,11 @@ export default {
     close(event,con){
       if(con){
         if(event.target.className.indexOf('vs-popup--background')!=-1){
-          this.$emit('update:active',false)
-          this.$emit('close', false)
-        } else if(this.$refs && event.srcElement == this.$refs.btnclose.$el){
+	  if(this.closeOnClickOfBackground) {
+            this.$emit('update:active',false)
+            this.$emit('close', false)
+          }
+        } else if(this.$refs && this.$refs.btnclose && event.srcElement == this.$refs.btnclose.$el){
           this.$emit('update:active',false)
           this.$emit('close', false)
         }
